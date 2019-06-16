@@ -33,7 +33,6 @@ btnCreate.onclick = event => {
     price: price.value
   })
 
-  // console.log(flag);
   productName.value = seller.value = price.value = '';
   getData(db.products, data => {
     userId.value = data.id + 1 || 1;
@@ -42,7 +41,6 @@ btnCreate.onclick = event => {
   readTable();
 
   let insertmsg = document.querySelector('.insertmsg');
-
   getMsg(flag, insertmsg);
 }
 
@@ -103,7 +101,7 @@ function readTable() {
   }
 
   getData(db.products, data => {
-    // console.log(data);
+
     if (data) {
       createElem('tr', tbody, tr => {
 
@@ -134,7 +132,6 @@ function readTable() {
 };
 
 function editBtn(event) {
-  // console.log(event.target.dataset.id);
   let id = parseInt(event.target.dataset.id);
   // console.log(typeof id);
   db.products.get(id, data => {

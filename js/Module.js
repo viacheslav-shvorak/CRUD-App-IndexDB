@@ -42,10 +42,7 @@ const getData = (dbname, fn) => {
   dbname.count(count => {
     if (count) {
       dbname.each(table => {
-        // console.log(table);
-
         obj = sortObj(table);
-        // console.log(obj);
         fn(obj, index++)
       })
     } else {
